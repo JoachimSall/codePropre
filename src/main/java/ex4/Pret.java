@@ -2,40 +2,67 @@ package ex4;
 
 import java.util.Date;
 
+/** Classe permettant de créer un prêt
+ * 
+ * @author Utilisateur
+ *
+ */
 public class Pret {
-
+	
+	/** strategy du pret */
 	private Strategy strategy;
+	
+	/** capital du pret */
 	private double capital;
+	
+	/** capital restant dû du pret */
 	private double capitalRestantDu;
+	
+	/** taux du pret */
 	private double taux;
+	
+	/** date de début du pret */
 	private Date dateDebut;
+	
+	/** date de fin du pret */
 	private Date dateFin;
 	
+	/**
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 */
 	public Pret(double capital, double taux, Date dateDebut) {
-		super();
 		this.strategy = new PretATerme();
 		this.capital = capital;
 		this.taux = taux;
 		this.dateDebut = dateDebut;
 	}
 	
+	/**
+	 * 
+	 * @param capital
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 */
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin) {
 		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
 	
+	/**
+	 * 
+	 * @param capital
+	 * @param capitalRestantDu
+	 * @param taux
+	 * @param dateDebut
+	 * @param dateFin
+	 */
 	public Pret(double capital, double capitalRestantDu, double taux, Date dateDebut, Date dateFin) {
 		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
 		this.capitalRestantDu = capitalRestantDu;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
 	}
 
 	/** Getter for strategy
